@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <h1>Hello World</h1>
+    <b-button type="is-primary" icon-left="delete">Hello World</b-button>
     <p>{{ info }}</p>
     <p>{{ error }}</p>
   </div>
@@ -36,8 +37,14 @@ export default {
 </script>
 
 <style lang="scss">
+$family-sans-serif:'Avenir', Helvetica, Arial, sans-serif !important;
+
+@import "~bulma/sass/utilities/_all";
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
