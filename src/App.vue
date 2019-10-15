@@ -3,6 +3,9 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <h1>Hello World</h1>
+    <div class="column is-4 is-offset-4">
+      <HeroCard />
+    </div>
     <b-button type="is-primary" icon-left="delete">Hello World</b-button>
     <p>{{ info }}</p>
     <p>{{ error }}</p>
@@ -12,11 +15,13 @@
 <script>
 import HTTP from './api/http-common';
 // import HelloWorld from './components/HelloWorld.vue';
+import HeroCard from './components/HeroCard.vue';
 
 export default {
   name: 'app',
   components: {
     // HelloWorld,
+    HeroCard,
   },
   data() {
     return {
