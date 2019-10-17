@@ -1,27 +1,18 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <h1>Hello World</h1>
-    <div class="column is-4 is-offset-4">
-      <HeroCard />
-    </div>
-    <b-button type="is-primary" icon-left="delete">Hello World</b-button>
-    <p>{{ info }}</p>
-    <p>{{ error }}</p>
+    <CardContainer />
   </div>
 </template>
 
 <script>
 import HTTP from './api/http-common';
-// import HelloWorld from './components/HelloWorld.vue';
-import HeroCard from './components/HeroCard.vue';
+import CardContainer from './components/CardContainer.vue';
 
 export default {
   name: 'app',
   components: {
-    // HelloWorld,
-    HeroCard,
+    CardContainer,
   },
   data() {
     return {
@@ -55,5 +46,8 @@ $family-sans-serif:'Avenir', Helvetica, Arial, sans-serif !important;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.columns {
+  margin: 0;
 }
 </style>
