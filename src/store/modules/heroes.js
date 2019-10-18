@@ -1,6 +1,6 @@
 // inital state
 const initialState = {
-  data: [],
+  data: ['TEST'],
 };
 
 const getters = {
@@ -9,6 +9,6 @@ const getters = {
 
 export default {
   namespaced: true,
-  initialState,
+  state: initialState,
   getters,
 };

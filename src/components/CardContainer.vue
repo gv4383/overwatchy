@@ -3,7 +3,7 @@
     <div
       class="column is-3"
       :key="index"
-      v-for="(hero, index) in heroList"
+      v-for="(hero, index) in heroesList"
     >
       <HeroCard />
     </div>
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import {
+  mapGetters,
+} from 'vuex';
 import HeroCard from './HeroCard.vue';
 
 export default {
@@ -18,10 +21,8 @@ export default {
   components: {
     HeroCard,
   },
-  data() {
-    return {
-      heroList: [1, 1, 1, 1, 1, 1, 1, 1],
-    };
+  computed: {
+    ...mapGetters('heroes', ['heroesList']),
   },
 };
 </script>
