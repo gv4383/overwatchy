@@ -1,5 +1,5 @@
 <template>
-  <div class="card float-card">
+  <div class="card float-transition">
     <div class="card-image">
       <figure class="image is-4by3">
         <!-- <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"> -->
@@ -51,7 +51,7 @@ $defaultDuration: .3s;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
-.float-card {
+.float-transition {
   display: inline-block;
   transition-duration: $defaultDuration;
   transition-property: transform;
