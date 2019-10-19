@@ -2,10 +2,16 @@
   <div class="columns is-desktop is-multiline">
     <div
       class="column is-3"
-      :key="index"
-      v-for="(hero, index) in heroesList"
+      v-for="hero in heroesList"
+      :key="hero.id"
     >
-      <HeroCard />
+      <HeroCard
+        :description="hero.description"
+        :difficulty="hero.difficulty"
+        :image="hero.image"
+        :name="hero.name"
+        :role="hero.role"
+      />
     </div>
   </div>
 </template>

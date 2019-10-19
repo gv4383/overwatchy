@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <div class="logo-style">
+      <img alt="Vue logo" src="./assets/logo.png" class="logo-style">
+    </div>
     <CardContainer />
   </div>
 </template>
@@ -36,10 +38,14 @@ $family-sans-serif:'Avenir', Helvetica, Arial, sans-serif !important;
   font-family: 'Avenir', Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.logo-style {
+  text-align: center;
+}
+
 .columns {
   margin: 0;
 }
