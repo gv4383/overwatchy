@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import HTTP from './api/http-common';
 import CardContainer from './components/CardContainer.vue';
 
 export default {
@@ -21,13 +20,7 @@ export default {
     };
   },
   created() {
-    HTTP.get()
-      .then((res) => {
-        this.info = res.data;
-      })
-      .catch((e) => {
-        this.error = e.message;
-      });
+    this.$store.dispatch('heroes/fetchHeroes');
   },
 };
 </script>

@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const baseDomain = 'https://overwatch-hero-api.herokuapp.com';
+const baseURL = `${baseDomain}/api`;
+
 const HTTP = axios.create({
-  baseURL: 'https://overwatch-hero-api.herokuapp.com/api/v1/heroes',
+  baseURL,
 });
 
 export default HTTP;
