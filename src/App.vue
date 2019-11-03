@@ -3,17 +3,20 @@
     <div class="logo-style">
       <img alt="Vue logo" src="./assets/logo.png" class="logo-style">
     </div>
+    <FilterBar />
     <CardContainer />
   </div>
 </template>
 
 <script>
 import CardContainer from './components/CardContainer.vue';
+import FilterBar from './components/FilterBar.vue';
 
 export default {
   name: 'app',
   components: {
     CardContainer,
+    FilterBar,
   },
   data() {
     return {
