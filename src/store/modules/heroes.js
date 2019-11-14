@@ -8,6 +8,10 @@ const initialState = {
 
 const getters = {
   heroesList: state => state.data,
+  tankList: state => state.data.filter(hero => hero.role === 'Tank'),
+  offenseList: state => state.data.filter(hero => hero.role === 'Offense'),
+  defenseList: state => state.data.filter(hero => hero.role === 'Defense'),
+  supportList: state => state.data.filter(hero => hero.role === 'Support'),
 };
 
 const actions = {
