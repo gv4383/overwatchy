@@ -14,6 +14,15 @@ const getters = {
   supportList: state => state.data.filter(hero => hero.role === 'Support'),
 };
 
+const mutations = {
+  setHeroesList(state, data) {
+    state.data = data;
+  },
+  setError(state, error) {
+    state.error = error;
+  },
+};
+
 const actions = {
   fetchHeroes({ commit }) {
     HTTP.get('/v1/heroes')
@@ -23,15 +32,6 @@ const actions = {
       .catch((e) => {
         commit('setError', e.message);
       });
-  },
-};
-
-const mutations = {
-  setHeroesList(state, data) {
-    state.data = data;
-  },
-  setError(state, error) {
-    state.error = error;
   },
 };
 
