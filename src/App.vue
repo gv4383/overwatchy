@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import CardContainer from './components/CardContainer.vue';
 import FilterBar from './components/FilterBar.vue';
 
@@ -17,6 +18,9 @@ export default {
   components: {
     CardContainer,
     FilterBar,
+  },
+  computed: {
+    ...mapGetters('filters', ['filtersList']),
   },
   data() {
     return {

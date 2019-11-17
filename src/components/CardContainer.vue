@@ -17,9 +17,7 @@
 </template>
 
 <script>
-import {
-  mapGetters,
-} from 'vuex';
+import { mapGetters } from 'vuex';
 import HeroCard from './HeroCard.vue';
 
 export default {
