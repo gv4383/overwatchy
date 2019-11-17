@@ -6,7 +6,6 @@ const initialState = {
     'Defense',
     'Support',
   ],
-  error: '',
 };
 
 const getters = {
@@ -16,9 +15,6 @@ const getters = {
 const mutations = {
   setFilters(state, data) {
     state.data = data;
-  },
-  setError(state, error) {
-    state.error = error;
   },
 };
 
