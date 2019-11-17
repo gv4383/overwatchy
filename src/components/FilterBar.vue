@@ -1,23 +1,37 @@
 <template>
   <div class="center-options">
-    <b-checkbox v-model="checkboxGroup" native-value="tank">
-        Tank
-    </b-checkbox>
-    <b-checkbox v-model="checkboxGroup" native-value="offense">
-        Offense
-    </b-checkbox>
-    <b-checkbox v-model="checkboxGroup" native-value="defense">
-        Defense
-    </b-checkbox>
-    <b-checkbox v-model="checkboxGroup" native-value="support">
-        Support
-    </b-checkbox>
+    <div class="checkbox-container" v-on:click="test">
+      <b-checkbox v-model="checkboxGroup" native-value="tank">
+          Tank
+      </b-checkbox>
+    </div>
+    <div class="checkbox-container" v-on:click="test">
+      <b-checkbox v-model="checkboxGroup" native-value="offense">
+          Offense
+      </b-checkbox>
+    </div>
+    <div class="checkbox-container" v-on:click="test">
+      <b-checkbox v-model="checkboxGroup" native-value="defense">
+          Defense
+      </b-checkbox>
+    </div>
+    <div class="checkbox-container" v-on:click="test">
+      <b-checkbox v-model="checkboxGroup" native-value="support">
+          Support
+      </b-checkbox>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'FilterBar',
+  methods: {
+    test() {
+      console.log(this.checkboxGroup);
+      this.$store.commit('filters/setFilters', this.checkboxGroup);
+    },
+  },
   data() {
     return {
       checkboxGroup: [
@@ -35,5 +49,11 @@ export default {
 .center-options {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 </style>

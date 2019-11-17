@@ -1,10 +1,10 @@
 // inital state
 const initialState = {
   data: [
-    'Tank',
-    'Offense',
-    'Defense',
-    'Support',
+    'tank',
+    'offense',
+    'defense',
+    'support',
   ],
 };
 
