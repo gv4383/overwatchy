@@ -28,7 +28,6 @@ export default {
   name: 'FilterBar',
   methods: {
     test() {
-      console.log(this.checkboxGroup);
       this.$store.commit('filters/setFilters', this.checkboxGroup);
     },
   },
