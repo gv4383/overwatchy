@@ -1,22 +1,22 @@
 <template>
   <div class="center-options">
     <div class="checkbox-container" v-on:click="test">
-      <b-checkbox v-model="checkboxGroup" native-value="tank">
+      <b-checkbox v-model="checkboxGroup" native-value="Tank">
           Tank
       </b-checkbox>
     </div>
     <div class="checkbox-container" v-on:click="test">
-      <b-checkbox v-model="checkboxGroup" native-value="offense">
+      <b-checkbox v-model="checkboxGroup" native-value="Offense">
           Offense
       </b-checkbox>
     </div>
     <div class="checkbox-container" v-on:click="test">
-      <b-checkbox v-model="checkboxGroup" native-value="defense">
+      <b-checkbox v-model="checkboxGroup" native-value="Defense">
           Defense
       </b-checkbox>
     </div>
     <div class="checkbox-container" v-on:click="test">
-      <b-checkbox v-model="checkboxGroup" native-value="support">
+      <b-checkbox v-model="checkboxGroup" native-value="Support">
           Support
       </b-checkbox>
     </div>
@@ -34,10 +34,10 @@ export default {
   data() {
     return {
       checkboxGroup: [
-        'tank',
-        'offense',
-        'defense',
-        'support',
+        'Tank',
+        'Offense',
+        'Defense',
+        'Support',
       ],
     };
   },

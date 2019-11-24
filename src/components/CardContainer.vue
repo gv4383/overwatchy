@@ -2,9 +2,14 @@
   <div class="columns is-desktop is-multiline">
     <div
       class="column is-3"
-      v-for="hero in heroesList"
+      v-for="hero in heroesList.filter(hero => filtersList.indexOf(hero.role) >= 0)"
       :key="hero.id"
     >
+    <!-- <div
+      class="column is-3"
+      v-for="hero in filteredHeroList"
+      :key="hero.id"
+    > -->
       <HeroCard
         :description="hero.description"
         :difficulty="hero.difficulty"
@@ -26,7 +31,9 @@ export default {
     HeroCard,
   },
   computed: {
+    ...mapGetters('filters', ['filtersList']),
     ...mapGetters('heroes', ['heroesList']),
+    // filteredHeroList: this.heroesList.filter(hero => this.filtersList.indexOf(hero.role) >= 0),
   },
 };
 </script>
