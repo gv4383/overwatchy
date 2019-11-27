@@ -32,8 +32,7 @@ export default {
   },
   computed: {
     ...mapGetters('filters', ['filtersList']),
-    ...mapGetters('heroes', ['heroesList']),
-    // filteredHeroList: this.heroesList.filter(hero => this.filtersList.indexOf(hero.role) >= 0),
+    ...mapGetters('heroes', ['heroesList', 'isReady']),
   },
 };
 </script>

@@ -23,23 +23,28 @@ const mutations = {
   setError(state, error) {
     state.error = error;
   },
-  setLoadingAndResolved(state, isLoadingState, hasResolvedState) {
+  setIsLoading(state, isLoadingState) {
     state.isLoading = isLoadingState;
+  },
+  setHasResolved(state, hasResolvedState) {
     state.hasResolved = hasResolvedState;
   },
 };
 
 const actions = {
   fetchHeroes({ commit }) {
-    commit('setLoadingAndResolved', false, true);
+    commit('setIsLoading', true);
+    commit('setHasResolved', false);
     HTTP.get('/v1/heroes')
       .then((res) => {
         commit('setHeroesList', res.data);
-        commit('setLoadingAndResolved', false, true);
+        commit('setIsLoading', false);
+        commit('setHasResolved', true);
       })
       .catch((e) => {
         commit('setError', e.message);
-        commit('setLoadingAndResolved', false, true);
+        commit('setIsLoading', false);
+        commit('setHasResolved', true);
       });
   },
 };
