@@ -5,11 +5,6 @@
       v-for="hero in heroesList.filter(hero => filtersList.indexOf(hero.role) >= 0)"
       :key="hero.id"
     >
-    <!-- <div
-      class="column is-3"
-      v-for="hero in filteredHeroList"
-      :key="hero.id"
-    > -->
       <HeroCard
         :description="hero.description"
         :difficulty="hero.difficulty"
