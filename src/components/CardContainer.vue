@@ -1,7 +1,7 @@
 <template>
   <div class="columns is-desktop is-multiline">
-    <div class="loading-container" v-if="!isReady">
-      <h1>LOADING...</h1>
+    <div v-if="!isReady">
+      <b-loading :is-full-page="true" :active="true" :can-cancel="false"></b-loading>
     </div>
     <div
       class="column is-3"
@@ -35,11 +35,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.loading-container {
-  margin-top: 20px;
-  text-align: center;
-  width: 100%;
-}
-</style>
