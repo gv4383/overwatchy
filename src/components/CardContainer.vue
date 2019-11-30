@@ -1,6 +1,6 @@
 <template>
   <div class="columns is-desktop is-multiline">
-    <div class="loading-container" v-if="isReady">
+    <div class="loading-container" v-if="!isReady">
       <h1>LOADING...</h1>
     </div>
     <div
