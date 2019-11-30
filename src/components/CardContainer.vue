@@ -38,6 +38,8 @@ export default {
 
 <style lang="scss">
 .loading-container {
+  margin-top: 20px;
   text-align: center;
+  width: 100%;
 }
 </style>
