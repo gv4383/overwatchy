@@ -1,7 +1,11 @@
 <template>
   <div class="columns is-desktop is-multiline">
+    <div class="loading-container" v-if="isReady">
+      <h1>LOADING...</h1>
+    </div>
     <div
       class="column is-3"
+      v-else
       v-for="hero in heroesList.filter(hero => filtersList.indexOf(hero.role) >= 0)"
       :key="hero.id"
     >
@@ -31,3 +35,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.loading-container {
+  text-align: center;
+}
+</style>
