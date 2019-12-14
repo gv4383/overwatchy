@@ -18,9 +18,16 @@ const mutations = {
   },
 };
 
+const actions = {
+  setFilters({ commit }, data) {
+    commit('setFilters', data);
+  },
+};
+
 export default {
   namespaced: true,
   state: initialState,
   getters,
   mutations,
+  actions,
 };
