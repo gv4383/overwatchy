@@ -1,21 +1,21 @@
 <template>
   <div class="center-options">
-    <div class="checkbox-container" v-on:click="test">
+    <div class="checkbox-container">
       <b-checkbox v-model="checkboxGroup" native-value="Tank">
           Tank
       </b-checkbox>
     </div>
-    <div class="checkbox-container" v-on:click="test">
+    <div class="checkbox-container">
       <b-checkbox v-model="checkboxGroup" native-value="Offense">
           Offense
       </b-checkbox>
     </div>
-    <div class="checkbox-container" v-on:click="test">
+    <div class="checkbox-container">
       <b-checkbox v-model="checkboxGroup" native-value="Defense">
           Defense
       </b-checkbox>
     </div>
-    <div class="checkbox-container" v-on:click="test">
+    <div class="checkbox-container">
       <b-checkbox v-model="checkboxGroup" native-value="Support">
           Support
       </b-checkbox>
@@ -26,20 +26,15 @@
 <script>
 export default {
   name: 'FilterBar',
-  methods: {
-    test() {
-      this.$store.commit('filters/setFilters', this.checkboxGroup);
+  computed: {
+    checkboxGroup: {
+      get() {
+        return this.$store.state.filters.data;
+      },
+      set(data) {
+        return this.$store.commit('filters/setFilters', data);
+      },
     },
-  },
-  data() {
-    return {
-      checkboxGroup: [
-        'Tank',
-        'Offense',
-        'Defense',
-        'Support',
-      ],
-    };
   },
 };
 </script>
