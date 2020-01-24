@@ -60,6 +60,8 @@ $defaultDuration: .3s;
   @include hardwareAccel();
   @include improveAntiAlias();
 
+  cursor: pointer;
+
   &:hover {
     transform: translateY(-5px);
   }
