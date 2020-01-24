@@ -5,10 +5,10 @@
     </div>
     <div
       class="column is-3"
-      @click="test"
       v-else
       v-for="hero in heroesList.filter(hero => filtersList.indexOf(hero.role) >= 0)"
       :key="hero.id"
+      @click="toggleModal(hero.id)"
     >
       <HeroCard
         :description="hero.description"
@@ -22,27 +22,18 @@
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="/static/img/placeholder-1280x960.png" alt="Image">
+            <img :src="activeHero.image" alt="Image">
           </figure>
         </div>
         <div class="card-content">
           <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="/static/img/placeholder-1280x960.png" alt="Image">
-              </figure>
-            </div>
             <div class="media-content">
-              <p class="title is-4">John Smith</p>
-              <p class="subtitle is-6">@johnsmith</p>
+              <p class="title is-4">{{ activeHero.name }}</p>
+              <p class="subtitle is-6">{{ activeHero.role }}</p>
             </div>
           </div>
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a>#css</a> <a>#responsive</a>
-            <br>
-            <small>11:09 PM - 1 Jan 2016</small>
+            {{ activeHero.description }}
           </div>
         </div>
       </div>
@@ -61,6 +52,7 @@ export default {
   },
   data() {
     return {
+      activeHero: {},
       isModalActive: false,
     };
   },
@@ -69,8 +61,9 @@ export default {
     ...mapGetters('heroes', ['heroesList', 'isReady']),
   },
   methods: {
-    test() {
-      // console.log(this.isModalActive);
+    toggleModal(id) {
+      const index = this.heroesList.findIndex(hero => hero.id === id);
+      this.activeHero = this.heroesList[index];
       this.isModalActive = !this.isModalActive;
     },
   },
