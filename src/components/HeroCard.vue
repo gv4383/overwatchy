@@ -1,5 +1,5 @@
 <template>
-  <div class="card float-transition">
+  <div class="card float-transition card-styling">
     <div class="card-image">
       <figure class="image is-4by3">
         <!-- <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"> -->
@@ -12,9 +12,6 @@
           <p class="title is-4">{{ name }}</p>
           <p class="subtitle is-6">{{ role }}</p>
         </div>
-      </div>
-      <div class="content">
-        {{ description }}
       </div>
     </div>
   </div>
@@ -49,6 +46,10 @@ $defaultDuration: .3s;
 @mixin improveAntiAlias() {
   //Improve aliasing on mobile/tablet devices
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.card-styling {
+  width: 100%;
 }
 
 .float-transition {
